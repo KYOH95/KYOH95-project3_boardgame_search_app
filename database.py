@@ -53,7 +53,7 @@ sql = """INSERT INTO BoardGameGeek (id, thumbnail, image, game, description, yea
 #load dataset into the database(postgresql)
 cur.executemany(sql, df_list_tuple)
 
-conn.commit()
+conn.commit()#데이터베이스 안에 확정지어 적재
 
 cur.close()
 conn.close()

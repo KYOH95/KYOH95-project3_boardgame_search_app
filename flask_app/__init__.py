@@ -1,13 +1,19 @@
 from flask import Flask, render_template
 
+def create_app():
+    app = Flask(__name__)
 
-app = Flask(__name__)
+    from flask_app.routes import main_routes
+    from flask_app.routes import user_routes
+    from flask_app.routes import result_routes
+    app.register_blueprint(main_routes.bp)
+    app.register_blueprint(user_routes.bp)
+    app.register_blueprint(result_routes.bp)
 
+    return app
 
-@app.route('/')
-def index():
-    return render_template('main.html')
+if __name__ == "__main__":
+    app = create_app()
+    app.run()
+    app.run(debug=True)
 
-# @app.route('/main')
-# def main():
-#     return render_template('main.html')

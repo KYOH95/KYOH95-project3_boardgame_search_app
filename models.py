@@ -78,6 +78,6 @@ print("오늘의 보드게임은",list(y_pred)[0])
 
 #pickling
 
-with open('model.pkl','wb') as pickle_file:
-    pickle.dump(pipe, pickle_file)
+# with open('model.pkl','wb') as pickle_file:
+#     pickle.dump(pipe, pickle_file)
 
